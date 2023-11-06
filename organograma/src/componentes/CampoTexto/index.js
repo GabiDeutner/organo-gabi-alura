@@ -1,10 +1,15 @@
 import './CampoTexto.css';
 
-const CampoTexto = () => {
-    rturn (
+const CampoTexto = (props) => {
+
+    const placeholderModificada = `${props.placeholder}...` // exemplo interpolar strings com props
+
+    return (
         <div className="campo-texto">
-            <label>Nome</label>
-            <input placeholder='Digite o seu Nome'/> 
+            <label>
+                {props.label}
+            </label>
+            <input placeholder={placeholderModificada}/> 
         </div>
     )
 }
