@@ -4,11 +4,10 @@ const CampoTexto = (props) => {
 
     const placeholderModificada = `${props.placeholder}...` // exemplo interpolar strings com props
 
-    let valor = ''
+    //let valor = ''
 
     const aoDigitado = (evento) => {
-        valor = evento.targed.value
-        console.log(valor)
+        props.aoAlterado(evento.target.value)
     }
 
     return (
@@ -16,7 +15,7 @@ const CampoTexto = (props) => {
             <label>
                 {props.label}
             </label>
-            <input value={valor} onChange={aoDigitado} required={props.obrigatorio} placeholder={placeholderModificada}/> 
+            <input value={props.valor} onChange={aoDigitado} required={props.obrigatorio} placeholder={placeholderModificada}/> 
         </div>
     )
 }
