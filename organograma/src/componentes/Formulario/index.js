@@ -1,7 +1,7 @@
 import CampoTexto from './componentes/CampoTexto';
 import './Formulario.css'
 
-const Formulario = () => {
+const Formulario = (props) => {
 
     const times = (
         'Programação',
@@ -20,7 +20,12 @@ const Formulario = () => {
 
     const aoSalvar = (evento) => {
         evento.preventDefault();
-        console.log('Form foi submetido =>', nome, cargo, imagem, time)
+        props.aoColaboradorCadastrado{
+            nome,
+            cargo,
+            imagem,
+            time
+        }
     }
 
 
